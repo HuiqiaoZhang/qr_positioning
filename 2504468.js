@@ -36,3 +36,28 @@ function showMarkerAt(top, left) {
     marker.style.top = top;
     marker.style.left = left;
 }
+
+
+function startScanner() {
+    reader.start(
+        { facingMode: "environment" },
+        {},
+        function (text) {
+            const item = JSON.parse(text);
+            showItemInfo(item);
+            toggleScanner();
+        }
+    ).catch(function (err) {
+        console.error(err);
+    });
+}
+
+function stopScanner() {
+    reader.stop();
+}
+
+function showItemInfo(item) {
+    itemName.innerText = "name: " + item.name;
+    itemStock.innerText = "inStock: " + (item.inStock ? "true" : "false");
+    itemPrice.innerText = "Price: " + item.price;
+}

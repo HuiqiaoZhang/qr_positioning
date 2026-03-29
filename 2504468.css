@@ -40,7 +40,7 @@ h1 {
     width: 100%;
 }
 
-#button {
+#btn {
     background-color: var(--theme);
     color: white;
     border: none;
@@ -50,7 +50,7 @@ h1 {
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s, border 0.3s;
 }
-#button:hover {
+#btn:hover {
     background-color: rgb(7, 92, 189);
     color: var(--theme);
     border: 2px solid var(--theme);
